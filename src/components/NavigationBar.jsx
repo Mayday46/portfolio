@@ -10,6 +10,7 @@ const NavigationBar = () => {
 
     const linkStyle = {
         textDecoration: 'none',
+        backgroundColor: 'white',
         color: 'black',
         fontWeight: 'bold',
         fontSize: '16px',
@@ -20,10 +21,10 @@ const NavigationBar = () => {
 
     return (
         <nav style = {navStyle}>
-            <Link to = "/" style = {linkStyle}> Home </Link>
-            <Link to = "/about" style = {linkStyle}> About </Link>
-            <Link to = "/projects" style = {linkStyle}> Projects </Link>
-            <Link to = "/contact" style = {linkStyle}> Contact </Link>
+        <Link to = "/" style = {linkStyle}> Home </Link>
+        <Link to = "/about" style = {linkStyle}> About </Link>
+        <Link to = "/projects" style = {linkStyle}> Projects </Link>
+        <Link to = "/contact" style = {linkStyle}> Contact </Link>
         </nav>
     );
 };

@@ -1,92 +1,137 @@
+/* ===== Modernized index.css ===== */
+@layer base, components, utilities;
 
-@import url(https://fonts.googleapis.com/css?family=Dosis:300,400);
-@import "tailwindcss";
+/* 1. BASE LAYER - Essential resets and variables */
+@layer base {
+  /* Font import with modern syntax */
+  @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;600&display=swap');
+  
+  :root {
+    /* Color system using OKLCH for better consistency */
+    --bg-primary: oklch(15% 0.03 260);
+    --text-primary: oklch(95% 0.01 260);
+    --text-secondary: oklch(80% 0.02 260);
+    --highlight: oklch(70% 0.25 0);
+    --hover: oklch(75% 0.15 260);
+    
+    /* Spacing system */
+    --space-xs: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    
+    /* Transitions */
+    --transition-duration: 0.3s;
+  }
 
-:root {
-  font-family: 'Dosis', sans-serif;
-  --bg: #1A1A2E;
-  /* --bg: #0e0a18; */
-  --text-primary: #ebf8ff;
-  --text-secondary: #b6e1f6;
-  --highlight: #E94560;
-  /* --highlight: #a43acb; */
-  --hover: #9BA4B5;
-  /* --bg: #312f42;
-  --text-primary: #f6d0cb;
-  --text-secondary: #61d5e4;
-  --highlight: #4c3cc3;
-  --hover: #61d5e4; */
+  /* Dark mode preferences */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-primary: oklch(10% 0.02 260);
+      --text-primary: oklch(98% 0.01 260);
+    }
+  }
+
+  /* Base element styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--space-lg);
+  }
+
+  body {
+    font-family: 'Dosis', -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
 }
 
-body {
-  background-color: var(--bg);
-  /* background: radial-gradient(#16213E 0%, #1A1A2E 100%); */
-  overflow-x: hidden !important;
+/* 2. COMPONENTS LAYER - Reusable patterns */
+@layer components {
+  /* Link styles - simplified yet enhanced */
+  .link {
+    color: var(--highlight);
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    transition: color var(--transition-duration) ease;
+    
+    &:hover {
+      color: var(--hover);
+    }
+    
+    /* Modern underline effect */
+    &--underline {
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform var(--transition-duration) ease;
+      }
+      
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
+
+  /* Centered wrapper - more flexible */
+  .centered {
+    width: min(90%, 1200px);
+    margin-inline: auto;
+    padding-block: var(--space-lg);
+  }
 }
 
-.wrapper {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  transition: all .2s ease-in-out;
+/* 3. UTILITIES LAYER - Helper classes */
+@layer utilities {
+  /* Animation for shine effect */
+  .animate-shine {
+    animation: shine 2s infinite;
+    mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    mask-size: 200%;
+  }
+
+  /* List reset */
+  .reset-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Responsive spacing */
+  .flow > * + * {
+    margin-top: var(--flow-space, var(--space-md));
+  }
 }
 
-a {
-  color: var(--highlight);
-  font-weight: 1000;
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
+/* Keyframes */
+@keyframes shine {
+  from { mask-position: 150%; }
+  to { mask-position: -50%; }
 }
 
-/*effect-underline*/
-a.effect-underline:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  display: inline-block;
-  height: 1em;
-  width: 100%;
-  border-bottom: 1px solid;
-  margin-top: 10px;
-  opacity: 0;
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: scale(0,1);
-  transform: scale(0,1);
-  color: var(--hover);
-}
-
-a.effect-underline:hover:after {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  color: var(--hover);
-}
-
-a:hover {
-  color: var(--hover);
-}
-
-/* effect-shine */
-a.effect-shine:hover {
-  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
-  -webkit-mask-size: 200%;
-  animation: shine 2s infinite;
-}
-
-li {
-  list-style: none;
-}
-
-@-webkit-keyframes shine {
-  from {
-    -webkit-mask-position: 150%;
+/* 4. MEDIA QUERIES - Responsive adjustments */
+@media (max-width: 768px) {
+  :root {
+    --space-md: 0.75rem;
+    --space-lg: 1.5rem;
   }
   
-  to {
-    -webkit-mask-position: -50%;
+  html {
+    scroll-padding-top: 80px; /* Account for fixed header */
   }
 }
