@@ -3,11 +3,9 @@ const Footer = () => {
 
     const footerStyle = {
         display: 'flex',
-        flexDirection: 'column',
-        position: 'absolute',
-        left: '45%',
-        bottom: '0%',
-        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '1rem',
+        marginTop: 'auto',
     }
 
     return (
