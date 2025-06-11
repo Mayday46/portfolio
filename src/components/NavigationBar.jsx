@@ -19,11 +19,11 @@ const NavigationBar = () => {
     };
 
     return (
-        <nav style={navStyle}>
-        <Link to="/" style={linkStyle}>Home</Link>
-        <Link to="/about" style={linkStyle}>About</Link>
-        <Link to="/projects" style={linkStyle}>Projects</Link>
-        <Link to="/contact" style={linkStyle}>Contact</Link>
+        <nav style = {navStyle}>
+            <Link to = "/" style = {linkStyle}> Home </Link>
+            <Link to = "/about" style = {linkStyle}> About </Link>
+            <Link to = "/projects" style = {linkStyle}> Projects </Link>
+            <Link to = "/contact" style = {linkStyle}> Contact </Link>
         </nav>
     );
 };
