@@ -4,7 +4,7 @@ const Home = () => {
         <main>
             <section id = "home" style={{ textAlign: 'center', padding: '2rem' }}>
                 <h1> Hello, Winston here... </h1>
-                <p> your average boba enjoyer from new york...</p>
+                <p> Boba-fuled developer from NYC</p>
             </section>
         </main>
     );
