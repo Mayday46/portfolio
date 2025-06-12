@@ -1,4 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { theme } from "../styles/theme";
 
 const NavigationBar = () => {
     const navStyle = {
@@ -27,6 +30,26 @@ const NavigationBar = () => {
         <Link to = "/contact" style = {linkStyle}> Contact </Link>
         </nav>
     );
+
+    // const { isDarkMode, toggleTheme } = useTheme();
+    // const location = useLocation();
+    // const [activeTab, setActiveTab] = useState(location.pathname)
+    // const currentTheme = isDarkMode ? theme.dark : theme.light;
+
+    // useEffect(() => {
+    //     setActiveTab(location.pathname);
+    // }, [])
+
+    // const navItems = [
+    //     { path: '/', label: 'Home' },
+    //     { path: '/about', label: 'About' },
+    //     { path: '/projects', label: 'Project' },
+    //     { path: '/contact', label: 'Contact' },
+    // ];
+
+
+
+
 };
 
 export default NavigationBar;

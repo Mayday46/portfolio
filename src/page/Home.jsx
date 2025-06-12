@@ -8,8 +8,6 @@ const Home = () => {
         <div>
             <section id = "home" style={{ padding: '2rem' }}>
                 <Intro />
-
-
             </section>
         </div>
     );

@@ -2,7 +2,6 @@ import { TypeAnimation } from 'react-type-animation';
 import "../styles/Intro.css";
 import { motion } from "framer-motion";
 import { FadeInSection } from "../utils/FadeInSection.jsx";
-import { Fade } from 'react-awesome-reveal';
 
 
 
@@ -12,7 +11,7 @@ const Intro = () => {
 
         <div>
             <FadeInSection>
-                <section>
+                <section className = "space-y-4">
                     <motion.div
                         initial = {{ opacity: 0, y: 20 }}
                         animate = {{ opacity: 1, y: 0 }}
