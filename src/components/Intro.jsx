@@ -18,14 +18,17 @@ const Intro = () => {
 
             <TypeAnimation
                 sequence = {[
-                    'Hello, Winston here ',
+                    'Hello, Winston here',
                     1000, // -> Pause for 1 second after typing
                 ]}
                 wrapper = "h1"
                 cursor = {true}
                 repeat = {Infinity}
-                speed = {80}
-                style = {{display: 'inline-block'}}
+                speed = {50}
+                style = {{
+                    display: 'inline-block',
+                    color: '#000000'
+                }}
             />
             <br/>
             <TypeAnimation
@@ -38,7 +41,10 @@ const Intro = () => {
                 cursor = {true}
                 repeat = {Infinity}
                 speed = {15}
-                style = {{ display: 'inline-block'}}
+                style = {{ 
+                    display: 'inline-block',
+                    color: '#000000'
+                }}
             
             />
 
