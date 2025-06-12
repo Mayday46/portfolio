@@ -30,7 +30,7 @@ const Intro = () => {
                     color: '#000000'
                 }}
             />
-            <br/>
+            {/* <br/>
             <TypeAnimation
                 sequence = {[
                     "your boba-fueled developer from nyc...",
@@ -46,7 +46,7 @@ const Intro = () => {
                     color: '#000000'
                 }}
             
-            />
+            /> */}
 
         </div>
 
