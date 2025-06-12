@@ -1,6 +1,8 @@
 import { TypeAnimation } from 'react-type-animation';
-import { Fade } from "react-awesome-reveal";
 import "../styles/Intro.css";
+import { motion } from "framer-motion";
+import { FadeInSection } from "../utils/FadeInSection.jsx";
+import { Fade } from 'react-awesome-reveal';
 
 
 
@@ -8,50 +10,42 @@ const Intro = () => {
 
     return (
 
-        // <Fade triggerOnce direction = "down" cascade>
-        //     <div id = "intro">
-        //         Hi, <span className = "name"> Winston </span> here 
-        //     </div>
-        // </Fade>
         <div>
-
-
-            <TypeAnimation
-                sequence = {[
-                    'Hello, Winston here',
-                    1000, // -> Pause for 1 second after typing
-                ]}
-                wrapper = "h1"
-                cursor = {true}
-                repeat = {Infinity}
-                speed = {50}
-                style = {{
-                    display: 'inline-block',
-                    color: '#000000'
-                }}
-            />
-            {/* <br/>
-            <TypeAnimation
-                sequence = {[
-                    "your boba-fueled developer from nyc...",
-                    1000,
-                    "trying to document the struggle of becoming software engineer.."
-                ]}
-                wrapper = 'h2'
-                cursor = {true}
-                repeat = {Infinity}
-                speed = {15}
-                style = {{ 
-                    display: 'inline-block',
-                    color: '#000000'
-                }}
-            
-            /> */}
+            <FadeInSection>
+                <section>
+                    <motion.div
+                        initial = {{ opacity: 0, y: 20 }}
+                        animate = {{ opacity: 1, y: 0 }}
+                        transition = {{ duration: 0.5 }}
+                        // className = "text-sm sm:text-base leading-relaxed"
+                        className = "text-2xl sm:text-3xl font-bold"
+                    >
+                        <TypeAnimation 
+                            sequence = {[
+                                'Hello, Winston here',
+                            ]}
+                            wrapper = "h1"
+                            cursor = {true}
+                            repeat = {Infinity}
+                            speed = {50}
+                            style = {{
+                                display: 'inline-block ',
+                                color: '#000000'
+                            }}
+                        />
+                    </motion.div>
+                    <motion.p
+                        initial = {{ opacity: 0, y: 20 }}
+                        animate = {{ opacity: 1, y: 0 }}
+                        transition = {{ duration: 0.5, delay: 1.2 }}
+                        className = "text-sm sm:text-base leading-relaxed"
+                    >
+                        your boba-fueled web developer from nyc documenting the struggle of becoming software engineer...
+                    </motion.p>
+                </section>
+            </FadeInSection>
 
         </div>
-
-
-        
 
     )
 
