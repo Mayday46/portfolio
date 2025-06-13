@@ -1,6 +1,6 @@
+import { motion } from "framer-motion";
 import { TypeAnimation } from 'react-type-animation';
 import "../styles/Intro.css";
-import { motion } from "framer-motion";
 import { FadeInSection } from "../utils/FadeInSection.jsx";
 
 
@@ -19,13 +19,13 @@ const Intro = () => {
                         // className = "text-sm sm:text-base leading-relaxed"
                         className = "text-2xl sm:text-3xl font-bold"
                     >
-                        <TypeAnimation 
+                        <TypeAnimation
                             sequence = {[
                                 'Hello, Winston here',
                             ]}
                             wrapper = "h1"
                             cursor = {true}
-                            repeat = {Infinity}
+                            repeat = {1}
                             speed = {50}
                             style = {{
                                 display: 'inline-block ',
