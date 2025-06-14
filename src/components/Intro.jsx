@@ -29,7 +29,7 @@ const Intro = () => {
                             speed = {50}
                             style = {{
                                 display: 'inline-block ',
-                                color: '#000000'
+                                // color: '#000000'
                             }}
                         />
                     </motion.div>
