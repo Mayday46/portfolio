@@ -62,7 +62,7 @@ const NavigationBar = () => {
                                 to = {item.path}
                                 className = {`px-3 py-2 text-sm rounded-lg transition-colors relative ${
                                     activeTab === item.path
-                                        ? 'text-gray-900 dark:text--white'
+                                        ? 'text-gray-900 dark:text-white'
                                         : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
                                 }`}
                             >
@@ -70,7 +70,7 @@ const NavigationBar = () => {
                                 {activeTab === item.path && (
                                     <motion.div
                                         className = "absolute inset-0 rounded-lg -z-10"
-                                        style = {{ backgroundColor: currentTheme.bubble}}
+                                        style = {{ backgroundColor: currentTheme.nav.bubble}}
                                         layoutId = "bubble"
                                         transition = {{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                                     />

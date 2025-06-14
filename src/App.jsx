@@ -22,7 +22,7 @@ function App() {
     // </div>
 
     <ThemeProvider>
-      <div className="flex flex-col min-h-screen">
+      <div className = "flex flex-col min-h-screen">
         <NavigationBar />
         <main className = "flex-grow">
           <Routes>
