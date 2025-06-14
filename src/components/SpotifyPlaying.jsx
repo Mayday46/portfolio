@@ -1,4 +1,4 @@
-
+import { Spotify } from "react-spotify-embed";
 
 const SpotifyPlaying = () => {
     return (
