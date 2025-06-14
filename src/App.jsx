@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
+import { Layout } from './components/Layout.jsx';
 import NavigationBar from './components/NavigationBar';
 import { ThemeProvider } from './context/ThemeContext.jsx';
 import About from './page/About.jsx';
@@ -22,6 +23,7 @@ function App() {
     // </div>
 
     <ThemeProvider>
+      <Layout>
       <div className = "flex flex-col min-h-screen">
         <NavigationBar />
         <main className = "flex-grow">
@@ -34,6 +36,7 @@ function App() {
         </main>
         <Footer />
       </div>
+      </Layout>
     </ThemeProvider>
   );
 }

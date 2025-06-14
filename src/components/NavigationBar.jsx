@@ -78,6 +78,7 @@ const NavigationBar = () => {
                             </Link>
                         ))}
                     </div>
+                    
                     <motion.button
                         onClick = {toggleTheme}
                         className = "p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors rounded-lg"
