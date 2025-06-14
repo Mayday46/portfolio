@@ -1,12 +1,11 @@
 /* ===== Modernized index.css ===== */
-
-/* ✅ FONT IMPORT must come FIRST, outside all @layer blocks */
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
+/* ✅ FONT IMPORT must come FIRST, outside all @layer blocks */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 @layer base {
   html {
@@ -44,7 +43,7 @@
   }
 
   .card {
-    @apply 
+    @apply
     transition-all duration-200;
   }
 }
