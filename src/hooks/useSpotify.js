@@ -62,7 +62,7 @@ export default function SpotifyData() {
 
         setRecentTracks(tracks);
       } catch (err) {
-        console.error('Error fetching recent tracks:', err);
+        console.error('Error fetching recent tracks: ', err);
       }
     };
 
