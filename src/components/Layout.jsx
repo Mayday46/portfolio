@@ -5,10 +5,10 @@ export const Layout = ({ children }) => {
 
     return (
         <div
-        className="min-h-screen transition-colors duration-200"
-        style={{ backgroundColor: currentTheme.bg.primary }}
+            className="min-h-screen transition-colors duration-200"
+            style={{ backgroundColor: currentTheme.bg.primary }}
         >
-        {children}
+            {children}
         </div>
     );
 };
