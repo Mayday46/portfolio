@@ -5,11 +5,15 @@ const CLIENT_SECRET = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
 const REFRESH_TOKEN = import.meta.env.VITE_SPOTIFY_REFRESH_TOKEN;
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
+// console.log('CLIENT_ID:', CLIENT_ID);
+// console.log('CLIENT_SECRET:', CLIENT_SECRET);
+// console.log('REFRESH_TOKEN:', REFRESH_TOKEN);
 
-export function useSpotifyAuth() {
+export const useSpotifyAuth = () =>{
     const [token, setToken] = useState(null);
 
     useEffect(() => {
+
         if (!token) {
             getAccessToken().then((data) => {
                 setToken(data.access_token);
@@ -34,8 +38,15 @@ export function useSpotifyAuth() {
             },
             body: params.toString()
         });
-        return response.json();
-    };
 
+        return response.json();
+        // const data = await response.json();
+        // console.log('Spotify token endpoint response:', data);
+        // if (!response.ok) {
+        //     throw new Error(data.error_description || 'Failed to fetch access token');
+        // }
+        // return data;
+    };
+    
     return { token };
 }
