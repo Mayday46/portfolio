@@ -9,7 +9,10 @@ export function useSpotify() {
   const { token } = useSpotifyAuth();
 
   useEffect(() => {
-    if (!token) return;
+    if (!token) {
+      console.warn('🔑 No token found for current track fetch.');
+      return;
+    }
 
     const fetchCurrentTrack = async () => {
       try {
@@ -19,7 +22,10 @@ export function useSpotify() {
           }
         });
 
+        console.log('🎧 Current track raw response:', response);
+
         if (response.status === 204) {
+          console.log('📭 No track currently playing.');
           setCurrentTrack(null);
           return;
         }
@@ -36,7 +42,7 @@ export function useSpotify() {
           });
         }
       } catch (error) {
-        console.error('Error fetching current track:', error);
+        console.error('❌ Error fetching current track:', error);
         setCurrentTrack(null);
       }
     };
@@ -45,7 +51,10 @@ export function useSpotify() {
   }, [token]);
 
   useEffect(() => {
-    if (!token) return;
+    if (!token) {
+      console.warn('🔑 No token found for recent tracks fetch.');
+      return;
+    }
 
     const fetchRecentTracks = async () => {
       try {
@@ -54,6 +63,8 @@ export function useSpotify() {
             'Authorization': `Bearer ${token}`
           }
         });
+
+        console.log('📻 Recently played response:', response.data);
 
         if (response.data && response.data.items) {
           const tracks = response.data.items.map(item => ({
@@ -64,6 +75,7 @@ export function useSpotify() {
             albumImageUrl: item.track.album.images[0].url,
             spotifyUrl: item.track.external_urls.spotify,
           }));
+          console.log('✅ Parsed recent tracks:', tracks);
           setRecentTracks(tracks);
         }
       } catch (error) {
@@ -75,7 +87,10 @@ export function useSpotify() {
   }, [token]);
 
   useEffect(() => {
-    if (!token) return;
+    if (!token) {
+      console.warn('🔑 No token found for top tracks fetch.');
+      return;
+    }
 
     const fetchTopTracks = async () => {
       try {
@@ -87,6 +102,8 @@ export function useSpotify() {
             }
           }
         );
+
+        console.log('📊 Top tracks response:', response.data);
 
         if (response.data && response.data.items) {
           const tracks = response.data.items.map(item => ({
