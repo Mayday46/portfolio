@@ -9,7 +9,15 @@ const ThemeContext = createContext({
 });
 
 export const ThemeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  // const [isDarkMode, setIsDarkMode] = useState(true);
+
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // This prevent from the page keeping rendering dark mode even if the user has set light mode in their browser
+    // Check localStorage for a saved theme preference
+    const savedTheme = localStorage.getItem('theme'); // This would check localStorage for a saved theme preference
+    return savedTheme ? savedTheme === 'dark' : true; // Default to dark mode if no preference is saved
+  })
+
   const currentTheme = isDarkMode ? theme.dark : theme.light;
 
   useEffect(() => {
