@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from "../context/ThemeContext";
 import { theme } from "../styles/theme";
+import profilePic from "../assets/profilePic.jpeg";
 
 const NavigationBar = () => {
     // const navStyle = {
@@ -54,6 +55,17 @@ const NavigationBar = () => {
         >
             <nav className = "container-width py-4">
                 <div className = "flex items-center justify-between">
+
+                    <Link to = "/" className = "flex iterms-cetner space-x-2">
+                        <img
+                        
+                            src = {profilePic}
+                            alt = "Ashin Chen"
+                            className = "w-8 h-8"
+
+                        />
+
+                    </Link>
 
                     <div className = "flex items-center space-x-1">
                         {navItems.map((item) => (
