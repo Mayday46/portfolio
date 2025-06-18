@@ -17,7 +17,7 @@ const Home = () => {
 
             <FadeInSection delay={0.5}>
                 <motion.section className="mt-6">
-                    <div className="bg-black text-green-400 font-mono p-6 rounded-xl shadow-md">
+                    <div>
                         <DebugConsole />
                     </div>
                 </motion.section>
