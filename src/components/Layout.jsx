@@ -8,7 +8,9 @@ export const Layout = ({ children }) => {
             className="min-h-screen transition-colors duration-200"
             style={{ backgroundColor: currentTheme.bg.primary }}
         >
-            {children}
+            <div className = "max-w-3xl mx-auto px-4">
+                { children }
+            </div>
         </div>
     );
 };

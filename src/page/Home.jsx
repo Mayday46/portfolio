@@ -4,7 +4,20 @@ import Intro from "../components/Intro.jsx";
 import SpotifyPlaying from "../components/SpotifyPlaying.jsx";
 import { FadeInSection } from "../utils/FadeInSection.jsx";
 
-
+const logs = [
+    'const <span class="text-orange-400">bobaIntakeToday</span> = <span class="text-blue-400">3</span>;',
+    'const <span class="text-rose-400">addictionLevel</span> = <span class="text-yellow-500">"100% certified 🧋 addict"</span>;',
+    '',
+    'let <span class="text-lime-400">playlistMood</span> = <span class="text-yellow-500">"bubble tea beats + emotional damage"</span>;',
+    'playlistMood += <span class="text-yellow-500">" • lofi for debugging life"</span>;',
+    '',
+    'const <span class="text-cyan-400">debugStatus</span> = () => {',
+    '  if (!codeWorks) return <span class="text-yellow-500">"try turning it off and on again"</span>;',
+    '  return <span class="text-yellow-500">"blame CSS"</span>;',
+    '};',
+  ];
+  
+  
 
 
 const Home = () => {
@@ -18,7 +31,9 @@ const Home = () => {
             <FadeInSection delay={0.5}>
                 <motion.section className="mt-6">
                     <div>
-                        <DebugConsole />
+                        <DebugConsole
+                            logs = {logs}
+                        />
                     </div>
                 </motion.section>
             </FadeInSection>
