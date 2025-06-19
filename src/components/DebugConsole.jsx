@@ -105,7 +105,7 @@ import { useEffect, useState } from "react";
 
 const DebugConsole = ({
     logs = [],
-    typeSpeed = 15,
+    typeSpeed = 30,
     lineDelay = 300,
 }) => {
   // Declare all state variables up top
@@ -151,7 +151,7 @@ const DebugConsole = ({
             dangerouslySetInnerHTML={{
                 __html:
                 displayedText +
-                '<span class="text-zinc-400 dark:text-zinc-600 animate-pulse">▌</span>',
+                '<span class="text-zinc-400 dark:text-zinc-600 animate-pulse"> _ </span>',
             }}
             />
         </div>

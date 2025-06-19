@@ -15,9 +15,9 @@ const logs = [
     '  if (!codeWorks) return <span class="text-yellow-500">"try turning it off and on again"</span>;',
     '  return <span class="text-yellow-500">"blame CSS"</span>;',
     '};',
-  ];
-  
-  
+];
+
+
 
 
 const Home = () => {
