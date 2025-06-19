@@ -104,62 +104,65 @@
 import { useEffect, useState } from "react";
 
 const DebugConsole = ({
-  logs = [],
-  typeSpeed = 15,
-  lineDelay = 300,
+    logs = [],
+    typeSpeed = 15,
+    lineDelay = 300,
 }) => {
   // Declare all state variables up top
-  const [displayedText, setDisplayedText] = useState("");
-  const [lineIndex, setLineIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
+    const [displayedText, setDisplayedText] = useState("");
+    const [lineIndex, setLineIndex] = useState(0);
+    const [charIndex, setCharIndex] = useState(0);
 
   // Prepare current values for this render
-  const isTypingFinished = lineIndex >= logs.length;
-  const currentLine = logs[lineIndex] || "";
-  const nextChar = currentLine[charIndex];
+    const isTypingFinished = lineIndex >= logs.length;
+    const currentLine = logs[lineIndex] || "";
+    const nextChar = currentLine[charIndex];
 
-  useEffect(() => {
+    useEffect(() => {
     if (isTypingFinished) return;
 
     const timeout = setTimeout(() => {
-      if (charIndex < currentLine.length) {
+        if (charIndex < currentLine.length) {
         setDisplayedText((prev) => prev + nextChar);
         setCharIndex((prev) => prev + 1);
-      } else {
+        } else {
         setDisplayedText((prev) => prev + "<br/>");
         setLineIndex((prev) => prev + 1);
         setCharIndex(0);
-      }
+        }
     }, charIndex < currentLine.length ? typeSpeed : lineDelay);
 
     return () => clearTimeout(timeout);
-  }, [charIndex, lineIndex, isTypingFinished, currentLine, nextChar, typeSpeed, lineDelay]);
+    }, [charIndex, lineIndex, isTypingFinished, currentLine, nextChar, typeSpeed, lineDelay]);
 
-  return (
-    <div className="rounded-xl overflow-hidden shadow-md border border-zinc-200 dark:border-zinc-700">
-      {/* Terminal Header */}
-      <div className="bg-zinc-200 dark:bg-zinc-800 p-2 px-4 flex gap-2 items-center">
-        <span className="w-3 h-3 rounded-full bg-red-500" />
-        <span className="w-3 h-3 rounded-full bg-yellow-400" />
-        <span className="w-3 h-3 rounded-full bg-green-500" />
-      </div>
+    return (
+        <div className="rounded-xl overflow-hidden shadow-md border border-zinc-200 dark:border-zinc-700">
+        {/* Terminal Header */}
+        <div className="bg-zinc-200 dark:bg-zinc-800 p-2 px-4 flex gap-2 items-center">
+            <span className="w-3 h-3 rounded-full bg-red-500" />
+            <span className="w-3 h-3 rounded-full bg-yellow-400" />
+            <span className="w-3 h-3 rounded-full bg-green-500" />
+        </div>
 
       {/* Terminal Body */}
-      <div className="bg-zinc-50 dark:bg-zinc-900 text-sm font-mono text-left text-zinc-800 dark:text-zinc-200 p-4">
-        <div
-          className="whitespace-pre-wrap"
-          dangerouslySetInnerHTML={{
-            __html:
-              displayedText +
-              '<span class="text-zinc-400 dark:text-zinc-600 animate-pulse">▌</span>',
-          }}
-        />
-      </div>
-    </div>
-  );
+        <div className="bg-zinc-50 dark:bg-zinc-900 text-sm font-mono text-left text-zinc-800 dark:text-zinc-200 p-4">
+            <div
+            className="whitespace-pre-wrap"
+            dangerouslySetInnerHTML={{
+                __html:
+                displayedText +
+                '<span class="text-zinc-400 dark:text-zinc-600 animate-pulse">▌</span>',
+            }}
+            />
+        </div>
+        </div>
+    );
 };
 
 export default DebugConsole;
+
+
+
 
 
 
