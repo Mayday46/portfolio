@@ -25,7 +25,10 @@ const Home = () => {
         <div>
 
             <FadeInSection>
-                <Intro />
+                <Intro
+                    heading = "Hello, Winston here..."
+                    subheading="your boba-fueled web developer from nyc documenting the struggle of becoming a software engineer..."
+                />
             </FadeInSection>
 
             <FadeInSection delay={0.5}>

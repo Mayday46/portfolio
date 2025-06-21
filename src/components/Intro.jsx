@@ -5,7 +5,7 @@ import { FadeInSection } from "../utils/FadeInSection.jsx";
 
 
 
-const Intro = () => {
+const Intro = ({ heading, subheading}) => {
 
     return (
 
@@ -21,7 +21,8 @@ const Intro = () => {
                     >
                         <TypeAnimation
                             sequence = {[
-                                'Hello, Winston here',
+                                // 'Hello, Winston here',
+                                heading
                             ]}
                             wrapper = "h1"
                             cursor = {true}
@@ -39,7 +40,8 @@ const Intro = () => {
                         transition = {{ duration: 0.5, delay: 1.2 }}
                         className = "text-sm sm:text-base leading-relaxed"
                     >
-                        your boba-fueled web developer from nyc documenting the struggle of becoming software engineer...
+                        {/* your boba-fueled web developer from nyc documenting the struggle of becoming software engineer... */}
+                        { subheading }
                     </motion.p>
                 </section>
             </FadeInSection>
