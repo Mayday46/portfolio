@@ -151,7 +151,7 @@ const DebugConsole = ({
             dangerouslySetInnerHTML={{
                 __html:
                 displayedText +
-                '<span class="text-zinc-400 dark:text-zinc-600 animate-pulse"> _ </span>',
+                '<span class="text-zinc-400 dark:text-zinc-600 animate-pulse">| </span>',
             }}
             />
         </div>
