@@ -11,7 +11,7 @@ const Intro = () => {
 
         <div>
             <FadeInSection>
-                <section className = "pt-9 space-y-4">
+                <section className = "space-y-4">
                     <motion.div
                         initial = {{ opacity: 0, y: 20 }}
                         animate = {{ opacity: 1, y: 0 }}

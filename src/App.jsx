@@ -27,12 +27,14 @@ function App() {
       <div className = "flex flex-col min-h-screen">
         <NavigationBar />
         <main className = "flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Project />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+          <div className = "container-width section">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Project />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </div>
         </main>
         <Footer />
       </div>
