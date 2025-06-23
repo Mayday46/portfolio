@@ -1,12 +1,24 @@
 
 import { motion } from 'framer-motion';
-import { useTheme } from '../context/ThemeContext';
 import { useState } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 const PhotoCard = ({ image, date, location, caption, isMobile }) => {
 
     const { currentTheme } = useTheme();
     const [isFlipped, setIsFlipped] = useState(false);
+
+    const handleMouseEnter = () => {
+        if (!isMobile) {
+            setIsFlipped(true);
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (!isMobile) {
+            setIsFlipped(false);
+        }
+    };
 
 
     return (

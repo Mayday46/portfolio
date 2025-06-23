@@ -1,8 +1,25 @@
 
+import { useEffect, useState } from 'react';
 import Intro from "../components/Intro.jsx";
+import PhotoGallery from "../components/PhotoGallery.jsx";
 import { FadeInSection } from "../utils/FadeInSection";
 
+
 const About = () => {
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 640);
+        }
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+
+    }, [])
+
     return (
         <div>
             <FadeInSection>
@@ -10,6 +27,10 @@ const About = () => {
                     heading = "This is who I am..."
                     subheading = "writing code, sipping tea, and figuring things out along the way."
                 />
+            </FadeInSection>
+
+            <FadeInSection delay = {0.2}>
+                <PhotoGallery isMobile = {isMobile}/>
             </FadeInSection>
         </div>
     );
