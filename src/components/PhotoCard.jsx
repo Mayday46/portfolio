@@ -32,18 +32,19 @@ const PhotoCard = ({ image, date, location, caption, isMobile }) => {
                 className = "w-full h-full relative preserve-3d"
                 animate = {{ rotateY: isFlipped ? 180 : 0 }}
                 transition = {{
-                    duration: 0.6,
+                    // duration: 0.6,
                     type: 'spring',
                     stiffness: 260,
-                    damping: 20
+                    damping: 20,
+                    ease: [0.25, 0.8, 0.25, 1]
                 }}
             >
                 <div className = "absolute w-full h-full backface-hidden">
-                    <img 
+                    <img
                         src = {image}
                         alt = {caption}
                         className = "w-full h-full object-cover rounded-lg shadow-lg transition-all duration-200"
-                        style = {{ mixBlendMode: 'multiply' }}
+                        style = {{ mixBlendMode: isMobile ? 'normal' : 'multiply', imageRendering: 'auto' }}
                         draggable = {false}
                     />
 
