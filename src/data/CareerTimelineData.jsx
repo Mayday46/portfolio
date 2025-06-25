@@ -86,7 +86,10 @@ const CareerTimelineData = [
                 Mytimeline.map((item) => (
                     <div key = {item.company + item.data} className = "relative">
                         <div
-                            className = {`absolute -left-[17px] top-2 w-[9px] h-[9px] rounded-full ${item.dotColor} ring-4 ring-white dark:ring-gray-900`}
+                            // This renders the placement for each dot.
+                            // -left-[20px] is used to position the dot to the left of the text.
+                            // top-[10px] is used to position the dot vertically.
+                            className = {`absolute -left-[20px] top-[10px] w-[9px] h-[9px] rounded-full ${item.dotColor} ring-4 ring-white dark:ring-gray-900`}
                         />
                         <motion.div
                             className = "group py-1 transition-colors"
@@ -102,7 +105,6 @@ const CareerTimelineData = [
                                 {item.description.map((description, index) => (
                                     <li key = { index }> {description} </li>
                                 ))}
-
                             </ul>
                         </motion.div>
                     </div>
