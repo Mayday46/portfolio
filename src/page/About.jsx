@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import Intro from "../components/Intro.jsx";
 import PhotoGallery from "../components/PhotoGallery.jsx";
+import Timeline from '../components/Timeline.jsx';
 import { FadeInSection } from "../utils/FadeInSection";
 
 
@@ -31,6 +32,10 @@ const About = () => {
 
             <FadeInSection delay = {0.2}>
                 <PhotoGallery isMobile = {isMobile}/>
+            </FadeInSection>
+
+            <FadeInSection delay = {0.4}>
+                <Timeline />
             </FadeInSection>
         </div>
     );
