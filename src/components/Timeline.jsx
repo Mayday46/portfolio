@@ -55,7 +55,7 @@ const Timeline = () => {
                             >
                                 { item.title }
                             </motion.h2>
-                            { item.title === "Timeline" ? (
+                            {/* { item.title === "Timeline" ? (
                                 <div className = "relative pl-4 pt-4">
                                     <div className = "absolute left-0 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700" />
                                         { item.content }
@@ -68,7 +68,18 @@ const Timeline = () => {
                                 >
                                     { item.content }
                                 </motion.div>
-                            )}
+                            )} */}
+                            <motion.div
+                                className = "transition-all p-4 sm:p-4 cursor-default"
+                                initial = { false }
+                                animate = {{ y: 0 }}
+                            >
+                                <motion.div className = "relative pl-4 pt-4">
+                                    <div className = {`absolute left-0 top-0 bottom-0 w-px ${item.dotColor} bg-gray-200 dark:bg-gray-700`} />
+                                        { item.content }
+                                </motion.div>
+                            </motion.div>
+
                         </motion.div>
                     </motion.section>
                 </FadeInSection>
