@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from 'react-router-dom';
+import profilePic from "../assets/profilePic.jpeg";
 import { useTheme } from "../context/ThemeContext";
 import { theme } from "../styles/theme";
-import profilePic from "../assets/profilePic.jpeg";
 
 const NavigationBar = () => {
     // const navStyle = {
@@ -45,7 +45,7 @@ const NavigationBar = () => {
     const navItems = [
         { path: '/', label: 'Home' },
         { path: '/about', label: 'About' },
-        { path: '/projects', label: 'Project' },
+        // { path: '/projects', label: 'Project' },
         { path: '/contact', label: 'Contact' },
     ];
 

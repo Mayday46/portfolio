@@ -4,6 +4,7 @@ import Hobbies from '../components/Hobbies.jsx';
 import Intro from "../components/Intro.jsx";
 import PhotoGallery from "../components/PhotoGallery.jsx";
 import Timeline from '../components/Timeline.jsx';
+import projectsData from '../data/MyProjects.jsx';
 import { FadeInSection } from "../utils/FadeInSection";
 
 
@@ -38,6 +39,16 @@ const About = () => {
 
             <FadeInSection delay = {0.4}>
                 <Timeline />
+            </FadeInSection>
+
+            <FadeInSection delay = {0.5}>
+                {projectsData.map((section) => (
+                    <div key = {section.title}>
+                        <h2 className = "text-xl font-bold mb-4">
+                            {section.title}
+                        </h2>
+                    </div>
+                ))}
             </FadeInSection>
 
             <FadeInSection delay = {0.6}>

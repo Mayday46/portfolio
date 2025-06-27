@@ -26,26 +26,26 @@ const Hobbies = () => {
     return (
     <div className="space-y-6">
         {HobbiesData.map((item, index) => (
-        <FadeInSection key={item.title}>
+        <FadeInSection key = {item.title}>
             <motion.section
-            className="space-y-1 rounded-xl overflow-hidden cursor-default"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{
+            className = "space-y-1 rounded-xl overflow-hidden cursor-default"
+            initial = {{ opacity: 0, y: 20 }}
+            animate = {{
                 opacity: hoverIndex === null || hoverIndex === index ? 1 : 0.5,
                 scale: hoverIndex === index ? 1.02 : 1,
             }}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
+            transition = {{ duration: 0.3, delay: index * 0.1 }}
             >
             <motion.div
-                className="grid grid-cols-1 sm:grid-cols-[130px_1fr] gap-1 sm:gap-4 cursor-default"
-                variants={sectionVariants}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                style={{ transformOrigin: 'center left' }}
+                className = "grid grid-cols-1 sm:grid-cols-[130px_1fr] gap-1 sm:gap-4 cursor-default"
+                variants = {sectionVariants}
+                onMouseEnter = {() => setHoveredIndex(index)}
+                onMouseLeave = {() => setHoveredIndex(null)}
+                style = {{ transformOrigin: 'center left' }}
             >
                 <motion.h2
-                className="text-lg font-semibold pt-4 cursor-default"
-                variants={titleVariants}
+                className = "text-lg font-semibold pt-4 cursor-default"
+                variants = {titleVariants}
                 >
                 {item.title}
                 </motion.h2>
