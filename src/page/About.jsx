@@ -42,13 +42,16 @@ const About = () => {
             </FadeInSection>
 
             <FadeInSection delay = {0.5}>
-                {projectsData.map((section) => (
-                    <div key = {section.title}>
-                        <h2 className = "text-xl font-bold mb-4">
-                            {section.title}
-                        </h2>
-                    </div>
-                ))}
+                <div className = "px-4 sm:px-6 lg:px-8 space-y-4 mb-12">
+                    {projectsData.map((section) => (
+                        <div key = {section.title}>
+                            <h2 className = "text-xl font-bold mb-4">
+                                {section.title}
+                            </h2>
+                            {section.content}
+                        </div>
+                    ))}
+                </div>
             </FadeInSection>
 
             <FadeInSection delay = {0.6}>

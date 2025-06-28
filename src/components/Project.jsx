@@ -33,7 +33,7 @@ const Project = ( {project} ) => {
                         {project.tech.map((tech) => (
                             <span
                                 key = {tech.name}
-                                className = {`text-xs px-2 py-1 rounded-full bg-${colorMap[tech.color]}-500 text-white`}
+                                className = {`text-xs px-2 py-1 rounded-full ${colorMap[tech.color] || "bg-gray-500"} text-white`}
                             >
                                 {tech.name}
                             </span>

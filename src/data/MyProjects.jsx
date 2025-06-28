@@ -28,7 +28,7 @@ const projectsData = [
 ];
 
 const MyProjects = [{
-    title: 'My Projects',
+    title: 'Projects',
     content: (
         <div className = "space-y-4">
             {projectsData.map((project) => (
