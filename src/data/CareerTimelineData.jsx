@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const Mytimeline = [
+const timeline = [
     {
         //
         company: "Queens College",
@@ -83,7 +83,7 @@ const CareerTimelineData = [
                     //     dotColor: "bg-purple-500"
                     // }]
 
-                Mytimeline.map((item) => (
+                timeline.map((item) => (
                     <div key = {item.company + item.data} className = "relative">
                         <div
                             // This renders the placement for each dot.

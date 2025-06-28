@@ -1,7 +1,7 @@
 
 import Project from "../components/Project";
 
-const projectsData = [
+const projects= [
     {
         title: "Portfolio Website",
         description: "A personal portfolio website showcasing my projects and skills.",

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const Myhobbies = [
+const hobbies = [
     {
         title: "Photography",
         description: "Capturing moments and landscapes through the lens.",
@@ -42,7 +42,7 @@ const HobbiesData = [{
     content: (
         <div className = "grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
             {
-                Myhobbies.map((hobby) => (
+                hobbies.map((hobby) => (
                     <motion.div
                         key = {hobby.title}
                         className = "group py-1 transition-colors"
