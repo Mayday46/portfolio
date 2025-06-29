@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 
-const colorMap = {
-    blue: "bg-blue-500",
-    teal: "bg-teal-500",
-    yellow: "bg-yellow-500",
-    green: "bg-green-500",
-  // add more if needed
-};
+// const colorMap = {
+//     blue: "bg-blue-500",
+//     teal: "bg-teal-500",
+//     yellow: "bg-yellow-500",
+//     green: "bg-green-500",
+//   // add more if needed
+// };
 
 
 const Project = ( {project} ) => {
@@ -33,7 +33,7 @@ const Project = ( {project} ) => {
                         {project.tech.map((tech) => (
                             <span
                                 key = {tech.name}
-                                className = {`text-xs px-2 py-1 rounded-full ${colorMap[tech.color] || "bg-gray-500"} text-white`}
+                                className = {`text-xs px-2 py-1 rounded-full bg-${tech.color}-500 text-white`}
                             >
                                 {tech.name}
                             </span>

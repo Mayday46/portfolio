@@ -1,12 +1,12 @@
 
 import { useEffect, useState } from 'react';
-import Hobbies from '../components/Hobbies.jsx';
+// import Hobbies from '../components/Hobbies.jsx';
 import Intro from "../components/Intro.jsx";
 import PhotoGallery from "../components/PhotoGallery.jsx";
-import Timeline from '../components/Timeline.jsx';
-import projectsData from '../data/MyProjects.jsx';
-import { FadeInSection } from "../utils/FadeInSection";
+// import Timeline from '../components/Timeline.jsx';
+// import projectsData from '../data/MyProjects.jsx';
 import { AboutmeSection } from '../components/AboutmeSection.jsx';
+import { FadeInSection } from "../utils/FadeInSection";
 
 
 

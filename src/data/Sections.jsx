@@ -1,7 +1,14 @@
 
 import { motion } from "framer-motion";
-import { Project} from "../components/Project";
+import Project from "../components/Project";
 // Datas for each section
+
+const colorMap = {
+    green: "text-green-500 dark:text-green-500",
+    blue: "text-blue-500 dark:text-blue-500",
+    purple: "text-purple-500 dark:text-purple-500",
+    red: "text-red-500 dark:text-red-500"
+};
 
 const projects = [
     {
@@ -108,7 +115,7 @@ export const sections = [
                 {
                     timeline.map((item) => (
                         <div key = {item.company + item.date} className = "relative">
-                            <div 
+                            <div
                                 className={`absolute -left-[17px] top-2 w-[9px] h-[9px] rounded-full ${item.dotColor} ring-4 ring-white dark:ring-gray-900`}
 
                             />

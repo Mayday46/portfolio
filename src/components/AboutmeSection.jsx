@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { sections } from '../data/sections';
-import { sectionVariants, titleVariants } from '../utils/animations';
 import { useState } from 'react';
+import { sections } from '../data/Sections';
 import { useInView } from '../hooks/useInView';
+import { sectionVariants, titleVariants } from '../utils/animations';
 
 const FadeInSection = ({ children }) => {
   const { ref, isInView } = useInView();
