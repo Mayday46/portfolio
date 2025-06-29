@@ -6,6 +6,7 @@ import PhotoGallery from "../components/PhotoGallery.jsx";
 import Timeline from '../components/Timeline.jsx';
 import projectsData from '../data/MyProjects.jsx';
 import { FadeInSection } from "../utils/FadeInSection";
+import { AboutmeSection } from '../components/AboutmeSection.jsx';
 
 
 
@@ -37,7 +38,7 @@ const About = () => {
                 <PhotoGallery isMobile = {isMobile}/>
             </FadeInSection>
 
-            <FadeInSection delay = {0.4}>
+            {/* <FadeInSection delay = {0.4}>
                 <Timeline />
             </FadeInSection>
 
@@ -56,6 +57,10 @@ const About = () => {
 
             <FadeInSection delay = {0.6}>
                 <Hobbies />
+            </FadeInSection> */}
+
+            <FadeInSection delay = {0.4}>
+                <AboutmeSection />
             </FadeInSection>
         </div>
     );
