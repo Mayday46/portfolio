@@ -14,6 +14,17 @@ const SpotifyPlaying = () => {
     const tracksRef = useRef(null);
 
     useEffect(() => {
+
+        const deduplicateTracks = (tracks) => {
+            const seen = new Set();
+            return tracks.filter((track) => {
+                const key = track.id || track.spotifyUrl;
+                if (seen.has(key)) return false;
+                seen.add(key);
+                return true;
+            })
+        };
+
         // Always show current track if it exists
         if (currentTrack) {
         setDisplayTrack(currentTrack);
@@ -65,7 +76,7 @@ const SpotifyPlaying = () => {
         <div className={`mb-4 ${displayTrack ? 'hidden sm:block' : 'block'}`}>
             <div className="flex justify-between items-center">
             <h2 className="text-lg font-semibold">
-                {currentTrack 
+                {currentTrack
                 ? 'Now Playing'
                 : (activeList === 'top' ? '#1 Track This Month' : 'Recently Played')}
             </h2>
@@ -77,7 +88,7 @@ const SpotifyPlaying = () => {
                     ? 'text-gray-900 dark:text-white font-medium'
                     : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
                 }`}
-                style={{ 
+                style={{
                     backgroundColor: activeList === 'recent' ? currentTheme.nav.bubble : 'transparent',
                     transition: 'background-color 0.2s ease-in-out'
                 }}
@@ -91,7 +102,7 @@ const SpotifyPlaying = () => {
                     ? 'text-gray-900 dark:text-white font-medium'
                     : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
                 }`}
-                style={{ 
+                style={{
                     backgroundColor: activeList === 'top' ? currentTheme.nav.bubble : 'transparent',
                     transition: 'background-color 0.2s ease-in-out'
                 }}
@@ -121,12 +132,12 @@ const SpotifyPlaying = () => {
                 >
                 {displayTrack && (
                     <>
-                    <Spotify 
+                    <Spotify
                         wide
                         link={displayTrack.spotifyUrl}
                         className="w-full sm:hidden"
                     />
-                    <Spotify 
+                    <Spotify
                         link={displayTrack.spotifyUrl}
                         className="hidden sm:block w-full"
                     />
@@ -140,7 +151,7 @@ const SpotifyPlaying = () => {
                                 ? 'text-gray-900 dark:text-white font-medium'
                                 : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
                             }`}
-                            style={{ 
+                            style={{
                             backgroundColor: activeList === 'recent' ? currentTheme.nav.bubble : 'transparent',
                             transition: 'background-color 0.2s ease-in-out'
                             }}
@@ -154,7 +165,7 @@ const SpotifyPlaying = () => {
                                 ? 'text-gray-900 dark:text-white font-medium'
                                 : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
                             }`}
-                            style={{ 
+                            style={{
                             backgroundColor: activeList === 'top' ? currentTheme.nav.bubble : 'transparent',
                             transition: 'background-color 0.2s ease-in-out'
                             }}
