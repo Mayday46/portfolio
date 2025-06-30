@@ -27,24 +27,36 @@ const SpotifyPlaying = () => {
 
         // Always show current track if it exists
         if (currentTrack) {
-        setDisplayTrack(currentTrack);
+            setDisplayTrack(currentTrack);
         if (activeList === 'top') {
             // Show top 4 tracks when viewing top tracks
-            setTracksList(topTracks.slice(0, 4));
+            // setTracksList(topTracks.slice(0, 4));
+            setTracksList(deduplicateTracks(topTracks).slice(0, 4));
         } else {
             // Show recent tracks (excluding current track if it's in the list)
-            setTracksList(recentTracks.slice(0, 4));
+            // setTracksList(recentTracks.slice(0, 4)); -> Original
+            const filteredRecent =recentTracks.filter((track) => track.id !== currentTrack.id);
+            setTracksList(deduplicateTracks(filteredRecent).slice(0, 4));
         }
         } else {
         // No current track playing
-        if (activeList === 'top') {
+            if (activeList === 'top') {
             // Show #1 top track as main and rest in list
-            setDisplayTrack(topTracks[0]);
-            setTracksList(topTracks.slice(1));
+                // setDisplayTrack(topTracks[0]);
+                // setTracksList(topTracks.slice(1));
+
+                const deduped = deduplicateTracks(topTracks);
+                setDisplayTrack(deduped[0]);
+                setTracksList(deduped.slice(1));
+
         } else {
             // Show most recent track as main and rest in list
-            setDisplayTrack(recentTracks[0]);
-            setTracksList(recentTracks.slice(1, 5));
+            // setDisplayTrack(recentTracks[0]);
+            // setTracksList(recentTracks.slice(1, 5));
+
+            const deduped = deduplicateTracks(recentTracks);
+            setDisplayTrack(deduped[0]);
+            setTracksList(deduped.slice(1, 5));
         }
         }
     }, [activeList, currentTrack, recentTracks, topTracks]);
