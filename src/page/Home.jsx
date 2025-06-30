@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import DebugConsole from "../components/DebugConsole";
 import Intro from "../components/Intro.jsx";
 import SpotifyPlaying from "../components/SpotifyPlaying.jsx";
+import { usePageTitle } from "../hooks/usePageTitle.js";
 import { FadeInSection } from "../utils/FadeInSection.jsx";
 
 const logs = [
@@ -21,6 +22,9 @@ const logs = [
 
 
 const Home = () => {
+
+    usePageTitle(""); // Only want to display the name in homepage.
+    
     return (
         <div>
 

@@ -6,13 +6,14 @@ import PhotoGallery from "../components/PhotoGallery.jsx";
 // import Timeline from '../components/Timeline.jsx';
 // import projectsData from '../data/MyProjects.jsx';
 import { AboutmeSection } from '../components/AboutmeSection.jsx';
+import { usePageTitle } from '../hooks/usePageTitle.js';
 import { FadeInSection } from "../utils/FadeInSection";
-
 
 
 const About = () => {
 
     const [isMobile, setIsMobile] = useState(false);
+    usePageTitle("About");
 
     useEffect(() => {
         const checkMobile = () => {

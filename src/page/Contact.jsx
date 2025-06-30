@@ -1,10 +1,12 @@
 
 import { motion } from "framer-motion";
 import Intro from "../components/Intro";
+import { usePageTitle } from "../hooks/usePageTitle.js";
 import { FadeInSection } from "../utils/FadeInSection";
 
 const Contact = () => {
 
+    usePageTitle('Contact');
     const cardHoverVariants = {
         initial: { scale: 1, y: 0},
         hover: {

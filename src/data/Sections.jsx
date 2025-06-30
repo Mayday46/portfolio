@@ -116,8 +116,10 @@ export const sections = [
                     timeline.map((item) => (
                         <div key = {item.company + item.date} className = "relative">
                             <div
-                                className={`absolute -left-[17px] top-2 w-[9px] h-[9px] rounded-full ${item.dotColor} ring-4 ring-white dark:ring-gray-900`}
-
+                                className={`absolute -left-[19px] top-2.5 w-[9px] h-[9px] rounded-full ${item.dotColor} ring-4 ring-white dark:ring-gray-900`}
+                                // -left-[19px] to position the dot correctly, this adjust the dot to be either closer or away from the text
+                                // -top-[19px] to position the dot vertically
+                                // // w-[9px] and h-[9px] to set the size of the dot
                             />
 
                             <motion.div
