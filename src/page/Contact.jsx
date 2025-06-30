@@ -117,7 +117,7 @@ const Contact = () => {
                             </motion.div>
                             <div className = "min-w-0 flex-1">
                                 <p className = "text-sm font-medium text-gray-900 dark:text-white"> Instagram </p>
-                                <p className = "text-xs text-gray-500 dark:text-gray-400 truncate"> @wlin </p>
+                                <p className = "text-xs text-gray-500 dark:text-gray-400 truncate"> @jllch_wzl </p>
                             </div>
                         </motion.a>
 

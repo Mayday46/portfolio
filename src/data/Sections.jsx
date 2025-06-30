@@ -15,7 +15,7 @@ const projects = [
         title: "Portfolio Website",
         description: "A personal portfolio website showcasing my projects and skills.",
         tech: [
-            { name: "React", color: "blue" },
+            { name: "React", color: "sky" },
             { name: "Tailwind CSS", color: "teal" },
             { name: "JavaScript", color: "yellow" },
             { name: "Spotify API", color: "green" }
@@ -27,10 +27,11 @@ const projects = [
         title: "Trending Movies App",
         description: "An app that displays trending movies using the TMDB API.",
         tech: [
-            { name: "React", color: "blue" },
+            { name: "React", color: "sky" },
             { name: "Tailwind CSS", color: "teal" },
-            { name: "TMDB API", color: "yellow" },
-            { name: "JavaScript", color: "green" }
+            { name: "JavaScript", color: "yellow" },
+            { name: "TMDB API", color: "green" },
+            
         ],
         link: "www.google.com"
     }
