@@ -15,15 +15,15 @@ const SpotifyPlaying = () => {
 
     useEffect(() => {
 
-        const deduplicateTracks = (tracks) => {
-            const seen = new Set();
-            return tracks.filter((track) => {
-                const key = track.id || track.spotifyUrl;
-                if (seen.has(key)) return false;
-                seen.add(key);
-                return true;
-            })
-        };
+        // const deduplicateTracks = (tracks) => {
+        //     const seen = new Set();
+        //     return tracks.filter((track) => {
+        //         const key = track.id || track.spotifyUrl;
+        //         if (seen.has(key)) return false;
+        //         seen.add(key);
+        //         return true;
+        //     })
+        // };
 
         // Always show current track if it exists
         if (currentTrack) {
